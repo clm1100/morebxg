@@ -1,0 +1,1 @@
+define(["jquery","cookie"],function(o){o("#formId").on("submit",function(){var e=o(this).serialize();return o.ajax({url:"/v3/login",type:"post",data:e,success:function(e){console.log(e),200==e.code&&(alert("登录成功"),o.cookie("userInfo",JSON.stringify(e.result),{path:"/"}),location.pathname="/")}}),!1})});

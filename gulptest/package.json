@@ -13,6 +13,7 @@
     "browser-sync": "^2.14.0",
     "browsersync-ssi": "^0.2.4",
     "gulp": "^3.9.1",
+    "gulp-cheerio": "^0.6.2",
     "gulp-clean": "^0.3.2",
     "gulp-compass": "^2.1.0",
     "gulp-concat": "^2.6.0",

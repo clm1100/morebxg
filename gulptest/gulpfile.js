@@ -33,6 +33,8 @@ var proxyMiddleware = require('http-proxy-middleware');
 
 var revCollector = require('gulp-rev-collector');//路径替换
 
+var cheerio = require("gulp-cheerio")
+
     // 替换文件名称用md5
 var  rev = require('gulp-rev');
 
@@ -148,6 +150,22 @@ gulp.task('rev', function() {
     //html，针对js,css,img
     gulp.src(['rev/**/*.json', 'app/**/*.html'])
         .pipe(revCollector({replaceReved:true }))
+        .pipe(gulp.dest('dist/'));
+});
+
+
+
+
+
+gulp.task('indexHtml', function() {
+    return gulp.src('app/index.html')
+        .pipe(cheerio(function ($) {
+            var a = $('script.a');
+            $('script').remove();
+            $('link').remove();
+             $('body').append(a);
+            // $('head').append('<link rel="stylesheet" href="app.full.min.css">');
+        }))
         .pipe(gulp.dest('dist/'));
 });
 

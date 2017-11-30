@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>主页页面</title>
+</head>
+  <body>
+  <div>
+    <%= require('./commonhtml/h1.html')%>
+    <button class="btn1">登陆按钮</button>
+    <button class="btn2">获取讲师列表</button>
+  </div>
+  <div><img src="<%=require('./img/apple.jpg')%>" /></div>
+
+  <div>
+  </div>
+	<div id="calculate">
+        <input type="text"><br>
+        <select>
+            <option value="1">加</option>
+            <option value="2">减</option>
+            <option value="3">乘</option>
+            <option value="4">除</option>
+            <option value="5">取余</option>
+        </select><br>
+        <input type="text"><br>
+        <input type="button" value="计算"><br>
+        <div></div>
+    </div>
+  </body>
+</html>
